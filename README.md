@@ -1,6 +1,6 @@
-# MotorMapping
+# Motor Imagery & Fine Motor Adaptation - Hurst 2022
 
-MotorMapping is a paradigm for studying fine-motor learning and adaptation using a simple pointing task. The purpose of the task is to measure how quickly people can adapt to a change in the mapping between a fine-motor movement and its perceptual outcome.
+This repository contains the experiment code for a study looking at whether effector mapping (i.e., the mapping of specific muscle movements to specific intended outcomes) is rehearsed when performing motor imagery. This is tested using a simple-yet-challenging fine motor pointing task.
 
 ![MotorMapping](task.gif)
 
@@ -16,7 +16,7 @@ Reaction times to targets are recorded, allowing the degree and duration of the 
 
 ## Requirements
 
-MotorMapping is programmed in Python 3.9 using the [KLibs framework](https://github.com/a-hurst/klibs). It has been developed and tested on recent versions of macOS and Linux, but should also work without issue on Windows systems.
+This experiment is programmed in Python 3.9 using the [KLibs framework](https://github.com/a-hurst/klibs). It has been developed and tested on recent versions of macOS and Linux, but should also work without issue on Windows systems.
 
 To use the task with a gamepad (as intended), you will also need a USB or wireless controller that is supported by your computer. The task has been tested with Microsoft Xbox 360 wired controllers as well as Sony DualShock 3 controllers connected via USB, but most gamepads that provide a joystick and rear triggers should work with the task. If no gamepad is available, mouse movement/clicking will be used in place of the joystick/triggers (respectively).
 
@@ -25,16 +25,31 @@ To use the task with a gamepad (as intended), you will also need a USB or wirele
 
 ### Installation
 
-First, you will need to install the KLibs framework by following the instructions [here](https://github.com/a-hurst/klibs).
-
-Then, you can then download and install the experiment program with the following commands (replacing `~/Downloads` with the path to the folder where you would like to put the program folder):
+To download a copy of the task, you can grab a .zip archive of the current code [here](https://github.com/LBRF-Projects/Adaptation-Hurst2022/archive/refs/heads/main.zip). Alternatively, you can clone this repository to your computer using Git by opening a terminal in your destination folder and running the following command:
 
 ```
-cd ~/Downloads
-git clone https://github.com/a-hurst/MotorMapping.git
+git clone https://github.com/LBRF-Projects/Adaptation_Hurst2022.git
 ```
 
-To install all dependencies for the task in a self-contained environment with Pipenv, run `pipenv install` while in the MotorMapping folder (Pipenv must be already installed).
+#### Option 1: Pipenv Installation
+
+To install the task and its dependencies in a self-contained Python environment, run the following commands in a terminal window inside the same folder as this README:
+
+```bash
+pip install pipenv
+pipenv install
+```
+These commands should create a fresh environment the task with all its dependencies installed. Note that to run commands using this environment, you will need to prefix them with `pipenv run` (e.g. `pipenv run klibs run 15.6`).
+
+#### Option 2: Global Installation
+
+Alternatively, to install the dependencies for the task in your global Python environment, run the following commands in a terminal window:
+
+```bash
+pip install https://github.com/a-hurst/klibs/releases/download/0.7.6b1/klibs.tar.gz
+pip install pyusb
+pip install libusb_package
+```
 
 ### Running the Experiment
 
